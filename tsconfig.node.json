@@ -2,12 +2,21 @@
   "compilerOptions": {
     "composite": true,
     "skipLibCheck": true,
-    "module": "esnext",
+    "module": "node16",
     "target": "ES2022",
     "lib": [
       "ES2022"
     ],
-    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/main/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ]
+    },
+    "moduleResolution": "node16",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -21,6 +30,7 @@
     "electron.vite.config.*",
     "src/main/**/*",
     "src/preload/**/*",
-    "src/types/**/*"
+    "src/types/**/*",
+    "src/shared/**/*"
   ]
 }
