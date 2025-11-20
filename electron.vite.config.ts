@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite';
 import { resolve } from 'path';
@@ -13,7 +14,15 @@ export default defineConfig({
     }
   },
   preload: {
-    plugins: [externalizeDepsPlugin()]
+    plugins: [externalizeDepsPlugin()],
+    build: {
+      rollupOptions: {
+        output: {
+          format: 'cjs',
+          entryFileNames: '[name].js'
+        }
+      }
+    }
   },
   renderer: {
     assetsInclude: 'src/renderer/src/assets/**',
@@ -28,6 +37,6 @@ export default defineConfig({
         '@/store': resolve('src/renderer/src/store')
       }
     },
-    plugins: [react()]
+    plugins: [react(), tailwindcss()]
   }
 });

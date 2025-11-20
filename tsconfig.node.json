@@ -2,7 +2,7 @@
   "compilerOptions": {
     "composite": true,
     "skipLibCheck": true,
-    "module": "node16",
+    "module": "nodenext",
     "target": "ES2022",
     "lib": [
       "ES2022"
@@ -16,7 +16,7 @@
         "src/shared/*"
       ]
     },
-    "moduleResolution": "node16",
+    "moduleResolution": "nodenext",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
