@@ -4,7 +4,7 @@ if (!process.contextIsolated) throw new Error('contextIsolation is must be enabl
 
 try {
   contextBridge.exposeInMainWorld('context', {
-    // TODO
+    locale: navigator.language
   });
 } catch (error) {
   console.error(error);
